@@ -246,15 +246,15 @@ CollectionUtil.prototype = {
             },
           },
 
-          clear_collection: {
-            name: Helper.translate({ key: 'clear_collection' }),
-            icon: 'fa-remove',
-            callback() {
-              const collectionName = getCollectionNameFromContextMenu($(this));
-              if (collectionName) self.clearCollection(collectionName);
-              else Notification.warning('select_collection');
-            }
-          }
+          // clear_collection: {
+          //   name: Helper.translate({ key: 'clear_collection' }),
+          //   icon: 'fa-remove',
+          //   callback() {
+          //     const collectionName = getCollectionNameFromContextMenu($(this));
+          //     if (collectionName) self.clearCollection(collectionName);
+          //     else Notification.warning('select_collection');
+          //   }
+          // }
         }
       },
       update_view_pipeline: {
@@ -301,22 +301,22 @@ CollectionUtil.prototype = {
           Connection.connect(true);
         },
       },
-      drop_collection: {
-        name: Helper.translate({ key: 'drop_collection' }),
-        icon: 'fa-trash',
-        callback() {
-          const collectionName = getCollectionNameFromContextMenu($(this));
-          if (collectionName) self.dropCollection(collectionName);
-          else Notification.warning('select_collection');
-        },
-      },
-      drop_collections: {
-        name: Helper.translate({ key: 'drop_all_collections' }),
-        icon: 'fa-ban',
-        callback() {
-          self.dropAllCollections();
-        },
-      },
+      // drop_collection: {
+      //   name: Helper.translate({ key: 'drop_collection' }),
+      //   icon: 'fa-trash',
+      //   callback() {
+      //     const collectionName = getCollectionNameFromContextMenu($(this));
+      //     if (collectionName) self.dropCollection(collectionName);
+      //     else Notification.warning('select_collection');
+      //   },
+      // },
+      // drop_collections: {
+      //   name: Helper.translate({ key: 'drop_all_collections' }),
+      //   icon: 'fa-ban',
+      //   callback() {
+      //     self.dropAllCollections();
+      //   },
+      // },
     };
   },
 
