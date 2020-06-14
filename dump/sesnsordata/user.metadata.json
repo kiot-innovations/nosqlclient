@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"sesnsordata.user"},{"v":2,"key":{"email":1},"name":"email_1","ns":"sesnsordata.user","background":true}],"uuid":"246d864651724707a389d0036c995dc5"}

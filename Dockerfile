@@ -1,13 +1,13 @@
 FROM debian:jessie
 
-RUN groupadd -r node && useradd -m -g node node
+RUN groupadd -r node -g 1000 && useradd -m -g node -u 1000 node
 
-ENV NODE_VERSION 8.4.0
+ENV NODE_VERSION 12.16.1
 ENV GOSU_VERSION 1.10
 
 # default values for Meteor environment variables
 ENV ROOT_URL http://localhost
-ENV MONGO_URL ''
+
 ENV PORT 3000
 ENV INSTALL_MONGO true
 ENV MONGOCLIENT_DEFAULT_CONNECTION_URL ''
