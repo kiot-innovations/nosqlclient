@@ -55,6 +55,7 @@
     "build": "meteor build /tmp/nosqlclient",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "debug-brk": "meteor run --inspect-brk=9229 --port 4000",
     "test": "cross-env TEST_BROWSER_DRIVER=chrome BABEL_ENV=coverage COVERAGE=1 COVERAGE_OUT_LCOVONLY=1 COVERAGE_APP_FOLDER=$PWD/ meteor test --once --driver-package meteortesting:mocha",
     "test:server": "cross-env TEST_CLIENT=0 meteor test --once --driver-package meteortesting:mocha",
     "test:client": "cross-env TEST_BROWSER_DRIVER=chrome TEST_SERVER=0 meteor test --once --driver-package meteortesting:mocha"
