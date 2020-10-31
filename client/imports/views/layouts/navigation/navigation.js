@@ -73,6 +73,10 @@ Template.navigation.events({
     if (event.target.id === 'btnDropCollection') return;
     CollectionUtil.setSessionForNavigation(this.name);
   },
+  'input #searchInCollectionInput' : function(event, template){
+    var inputText = $('#searchInCollectionInput').val().toLowerCase();  
+    Session.set('searchString', inputText)
+  }
 });
 
 Template.navigation.onRendered(() => {
@@ -129,6 +133,16 @@ Template.navigation.helpers({
   getCollectionNames() {
     return CollectionUtil.getCollectionNames();
   },
+  getCollectionNamesFiltered() {
+    console.log(CollectionUtil.getCollectionNames());
+    var searchString = Session.get('searchString');
+    if (searchString && searchString.length) {
+      return CollectionUtil.getCollectionNames().filter(i => i && i.name && i.name.indexOf(searchString) > -1);
+    } else {
+      return CollectionUtil.getCollectionNames();
+    }
+  },
+
 
   getSystemCollectionNames() {
     return CollectionUtil.getCollectionNames(true);

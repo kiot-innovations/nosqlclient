@@ -143,7 +143,7 @@
                             {{/if}}
                         </a>
 
-                        <ul id="listCollectionNames" class="nav nav-second-level">
+                        <!-- <ul id="listCollectionNames" class="nav nav-second-level">
                             {{#each getCollectionNames}}
                                 <li>
                                     <a class="navCollection {{#if equals type 'view'}}navView{{/if}}" href="{{pathFor route='browseCollection'}}"><i
@@ -156,7 +156,33 @@
                                     </a>
                                 </li>
                             {{/each}}
+                        </ul> -->
+                        <ul>
+                            <li>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                    <input name="search-collection" id="searchInCollectionInput" type="text" class="form-control"/>
+                                </div>
+                            </li>
                         </ul>
+                        <ul id="listCollectionNamesFiltered" class="nav nav-second-level">
+                            {{#each getCollectionNamesFiltered}}
+                                <li>
+                                    <a class="navCollection {{#if equals type 'view'}}navView{{/if}}" href="{{pathFor route='browseCollection'}}"><i
+                                            class="fa fa-book"></i> <span
+                                            class="nav-label">{{name}}</span>
+                                        {{#if equals type 'view'}}
+                                            <span title="View" style="margin-left: 15px"
+                                                  class="label label-info">{{_ "view"}}</span>
+                                        {{/if}}
+                                    </a>
+                                </li>
+                            {{/each}}
+                        </ul>
+
+
                     </li>
 
                     {{#if getSystemCollectionNames}}
